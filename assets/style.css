@@ -1,0 +1,106 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    padding: 2rem;
+}
+
+.feed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.brief-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.brief-card h2 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.brief-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Dashboard (index.html) */
+body {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#feed-title-section {
+    margin: 12px 0 20px;
+}
+
+#feed-title-section h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #1f2a37;
+}
+
+#feed-title-section p {
+    margin: 8px 0 0;
+    color: #5b6675;
+}
+
+.brief {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+.brief:hover {
+    border-color: #0078d4;
+}
+
+.brief .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #0078d4;
+    margin-bottom: 10px;
+}
+
+.brief .meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.subscribe-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0078d4;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#feed-footer {
+    margin: 28px 0 16px;
+    padding-top: 14px;
+    border-top: 1px solid #d9e1e8;
+    color: #6b7280;
+    font-size: 0.9rem;
+    text-align: right;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="rss-style.xsl"?>
+<rss version="2.0">
+  <angela-version>1.0.0</angela-version>
+  <summary_title>4월 18일 정부공고 요약</summary_title>
+  <description>TODO: collector등 정보 요약, Angela version</description>
+  <brief>
+    <project-title>[기업마당] 첫번째 어떤 공고</project-title>
+    <project-desc>공고에 대한 어떤 내용과 시작 및 종료 일자</project-desc>
+    <url>https://bizinfo.go.kr</url>
+    <end_date>2026 - 04 - 24</end_date>
+    <guid>angela-20260417-001</guid>
+  </brief>
+</rss>
