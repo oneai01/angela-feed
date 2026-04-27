@@ -141,12 +141,12 @@ fetch('rss.xml')
             card.className = 'brief';
             card.innerHTML = `
                 <div class="title">${titleHtml}</div>
+                ${detailHtml}
                 <div class="brief-actions">
                     ${dataSource ? `<span class="source">${dataSource}</span>` : ''}
                     (<a href="${url}" target="_blank" rel="noopener noreferrer">${linkText}</a>),
-                    마감일자: ${end_date}
+                    마감일: ${end_date}
                 </div>
-                ${detailHtml}
             `;
             container.appendChild(card);
         });

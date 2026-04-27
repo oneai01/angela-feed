@@ -97,8 +97,10 @@ h1 {
 }
 
 .brief .brief-actions {
-    margin-top: 10px;
-    text-align: left;
+    margin-top: 8px;
+    text-align: right;
+    font-size: 0.85rem;
+    color: #667085;
 }
 
 .brief .brief-actions a {
