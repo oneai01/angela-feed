@@ -87,6 +87,15 @@ h1 {
     margin-bottom: 10px;
 }
 
+.brief .title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.brief .title a:hover {
+    text-decoration: underline;
+}
+
 .brief .brief-actions {
     margin-top: 10px;
     text-align: left;

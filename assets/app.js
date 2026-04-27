@@ -128,15 +128,19 @@ fetch('rss.xml')
 
             const rawUrl = firstTextByTags(item, ['link'], '#');
             const url = /^(https?:|mailto:)/i.test(rawUrl) ? rawUrl : (rawUrl.includes('@') ? `mailto:${rawUrl}` : rawUrl);
+            const hasPostUrl = /^https?:/i.test(url);
             const isEmailLink = /^mailto:/i.test(url);
             const emailAddress = isEmailLink ? url.replace(/^mailto:/i, '') : '';
             const linkText = isEmailLink ? `연락처: ${emailAddress}` : '원문보기';
             const end_date = firstTextByTags(item, ['angela:end_date', 'end_date', 'pubDate'], '마감일 미정');
+            const titleHtml = hasPostUrl
+                ? `<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>`
+                : title;
 
             const card = document.createElement('div');
             card.className = 'brief';
             card.innerHTML = `
-                <div class="title">${title}</div>
+                <div class="title">${titleHtml}</div>
                 <div class="brief-actions">
                     ${dataSource ? `<span class="source">${dataSource}</span>` : ''}
                     (<a href="${url}" target="_blank" rel="noopener noreferrer">${linkText}</a>),
