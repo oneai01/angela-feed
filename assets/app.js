@@ -133,6 +133,20 @@ fetch('rss.xml')
             const emailAddress = isEmailLink ? url.replace(/^mailto:/i, '') : '';
             const linkText = isEmailLink ? `연락처: ${emailAddress}` : '원문보기';
             const end_date = firstTextByTags(item, ['angela:end_date', 'end_date', 'pubDate'], '마감일 미정');
+            const endDateMatch = end_date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+            let isDeadlineWarning = false;
+            if (endDateMatch) {
+                const [, y, m, d] = endDateMatch;
+                const deadline = new Date(Number(y), Number(m) - 1, Number(d));
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                const msPerDay = 24 * 60 * 60 * 1000;
+                const daysLeft = Math.floor((deadline.getTime() - today.getTime()) / msPerDay);
+                isDeadlineWarning = daysLeft >= 0 && daysLeft < 10;
+            }
+            const endDateHtml = isDeadlineWarning
+                ? `<span class="deadline-warning">마감일: ${end_date}</span>`
+                : `마감일: ${end_date}`;
             const titleHtml = hasPostUrl
                 ? `<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>`
                 : title;
@@ -145,7 +159,7 @@ fetch('rss.xml')
                 <div class="brief-actions">
                     ${dataSource ? `<span class="source">${dataSource}</span>` : ''}
                     (<a href="${url}" target="_blank" rel="noopener noreferrer">${linkText}</a>),
-                    마감일: ${end_date}
+                    ${endDateHtml}
                 </div>
             `;
             container.appendChild(card);
