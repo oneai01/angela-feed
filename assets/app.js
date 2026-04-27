@@ -68,17 +68,17 @@ fetch('rss.xml')
             formattedDate = `${year}년 ${parseInt(month)}월 ${parseInt(day)}일`;
         }
 
-        let publishedAtText = 'Published at unknown';
+        let updatedAtText = 'Last update - unknown';
         if (dtMatch) {
             const [, year, month, day, hour, minute, second] = dtMatch;
-            publishedAtText = `Published at ${year} ${month} ${day}-${hour}:${minute}:${second}`;
+            updatedAtText = `Last update at ${year} ${month} ${day}-${hour}:${minute}:${second}`;
         }
 
         titleSection.innerHTML = `
             <h1>${formattedDate} - 창업지원 공고 ${itemCount}건 요약</h1>
         `;
 
-        container.innerHTML = `<div class="published_date">${publishedAtText}</div>`;
+        container.innerHTML = `<div class="update_date">${updatedAtText}</div>`;
 
         if (!briefs.length) {
             container.innerHTML += '<p>표시할 공고가 없습니다.</p>';
