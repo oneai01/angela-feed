@@ -60,6 +60,13 @@ h1 {
     color: #5b6675;
 }
 
+.published_date {
+    text-align: right;
+    color: #5b6675;
+    font-size: 0.9rem;
+    margin: 0 0 12px;
+}
+
 .brief {
     background: #fff;
     border: 1px solid #ddd;
@@ -80,10 +87,20 @@ h1 {
     margin-bottom: 10px;
 }
 
-.brief .meta {
-    font-size: 0.9rem;
+.brief .brief-actions {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.brief .brief-actions a {
+    color: #0078d4;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.brief .brief-actions .source {
     color: #666;
-    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .subscribe-btn {
